@@ -1,0 +1,5 @@
+## ignore the env
+env/
+
+## ignore .env
+.env
