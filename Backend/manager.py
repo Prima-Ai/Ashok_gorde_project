@@ -13,7 +13,6 @@ class SmartOne:
         try:
             ## login api call
             data = self.obj.generateSession(os.getenv("CLIENT_ID"),os.getenv("PASSWORD"),os.getenv("TOTP"))
-            print(data)
             if data['data'] != None:
                 refreshToken = data['data']['refreshToken']
                 
@@ -44,7 +43,6 @@ class SmartOne:
                         "quantity": f"{quantity}"
                         }
                     orderId=self.obj.placeOrder(orderparams)
-                    print("The order id is: {}".format(orderId))
                 except Exception as e:
                     print("Order placement failed: {}".format(e.message))
             else:
@@ -55,5 +53,5 @@ class SmartOne:
         
 
 
-angelone = SmartOne()
-print(angelone.place_order())
+# angelone = SmartOne()
+# print(angelone.place_order())
